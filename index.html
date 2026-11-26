@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>kycBank prototype: Onboarding and KYC Refresh</title>
+<link rel="icon" href="data:,">
 <meta name="description" content="A personal portfolio prototype by Malick Manso. kycBank is a fictional bank.">
 <style>
   :root { --navy:#1F3864; --grey:#595959; --blue:#2E75B6; --bg:#f6f7f9; }
@@ -21,6 +22,8 @@
   table { width:100%; border-collapse:collapse; font-size:.95rem; }
   td { padding:.45rem .25rem; border-bottom:1px solid #e3e6ea; color:var(--grey); }
   td:first-child { color:var(--navy); font-weight:700; white-space:nowrap; padding-right:1rem; }
+  a.cta { display:inline-block; background:var(--navy); color:#fff; text-decoration:none; padding:.75rem 1.2rem; border-radius:6px; font-weight:700; }
+  a.cta:focus-visible { outline:3px solid #f2b705; outline-offset:2px; }
   footer { font-size:.8rem; color:var(--grey); border-top:1px solid #e3e6ea; padding-top:1rem; margin-top:2rem; }
 </style>
 </head>
@@ -38,6 +41,8 @@
       <li><strong>Existing customer:</strong> a customer whose review is due confirms what is still right and supplies only what is missing or out of date.</li>
     </ul>
   </div>
+
+  <p><a class="cta" href="open.html">Try the new-customer flow</a></p>
 
   <div class="card">
     <h2>Progress</h2>

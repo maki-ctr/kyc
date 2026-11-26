@@ -14,10 +14,15 @@ The prototype shows how a Belgian retail bank could open accounts remotely for n
 | data/tier_table.json | K-04 | Illustrative tier table: questions, "why we ask", tiers, next steps, test cases |
 | docs/K-05_interview_guide.md | K-05 | Interview guide, consent wording, notes and synthesis templates |
 | docs/K-11_decision_log.md | K-11 | Decisions with the option rejected |
+| index.html | | Landing page |
+| open.html, js/flow1.js, css/app.css | K-06 | Flow 1: a newcomer opens an account (9 screens) |
+| data/content.en.json | K-06 | All flow 1 wording, English |
 | js/tiers.js | K-06 | Tier decision used by the prototype |
 | tests/tiers.test.js | K-04 | Checks the table and that every tier is reachable |
 
 Run the check: `node tests/tiers.test.js`
+
+Try it locally: `python3 -m http.server` in this folder, then open http://localhost:8000/open.html
 
 ## Ground rules
 

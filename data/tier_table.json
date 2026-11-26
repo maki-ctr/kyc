@@ -105,7 +105,7 @@
     {
       "id": "country_risk",
       "step": "eligibility",
-      "text": "Where do you live and which nationality do you hold?",
+      "text": "Which nationality do you hold?",
       "why_we_ask": "EU law requires extra checks for people connected to countries the European Commission lists as high-risk (AMLR Article 29). It's about the country's rules, not about you.",
       "illustrative_note": "In a real app the customer picks countries from a list and the bank checks them against the Commission's current list. The prototype offers three groups so every tier can be tested.",
       "options": [
