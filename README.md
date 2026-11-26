@@ -16,7 +16,9 @@ The prototype shows how a Belgian retail bank could open accounts remotely for n
 | docs/K-11_decision_log.md | K-11 | Decisions with the option rejected |
 | index.html | | Landing page |
 | open.html, js/flow1.js, css/app.css | K-06 | Flow 1: a newcomer opens an account (9 screens) |
-| data/content.en.json | K-06 | All flow 1 wording, English |
+| refresh.html, js/flow2.js | K-07 | Flow 2: an existing customer refreshes their details (5 screens) |
+| data/flow2_profile.json | K-07 | Fictional customer on file for flow 2 |
+| data/content.en.json | K-06, K-07 | All wording for both flows, English |
 | js/tiers.js | K-06 | Tier decision used by the prototype |
 | tests/tiers.test.js | K-04 | Checks the table and that every tier is reachable |
 

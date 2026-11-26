@@ -43,3 +43,15 @@ button.route strong { display:block; color:var(--navy); }
 .error { color:#a3160b; font-size:.9rem; margin-top:.5rem; }
 pre.log { white-space:pre-wrap; font-size:.8rem; background:#fff; border:1px solid var(--line); padding:.75rem; border-radius:6px; }
 button:focus-visible, input:focus-visible, summary:focus-visible { outline:3px solid #f2b705; outline-offset:2px; }
+/* flow 2 */
+h2.group { font-size:1rem; color:var(--navy); margin:1.25rem 0 .4rem; }
+ul.items { list-style:none; padding:0; margin:0; }
+ul.items > li { background:#fff; border:1px solid var(--line); border-radius:8px; padding:.7rem .8rem; margin:.5rem 0; }
+ul.items fieldset { margin:0; }
+.rowhead { display:flex; justify-content:space-between; gap:.5rem; align-items:baseline; font-size:.88rem; }
+.rowval { display:flex; justify-content:space-between; gap:.75rem; align-items:center; margin-top:.25rem; }
+.badge { font-size:.78rem; padding:.15rem .45rem; border-radius:10px; background:#e8eef6; color:#23364f; white-space:nowrap; }
+.badge.ok { background:#e5f3ea; color:var(--ok); }
+.badge.warn { background:#fff1d6; color:#6b4000; white-space:normal; text-align:right; }
+button.small { padding:.45rem .7rem; font-size:.9rem; flex:none; }
+input + fieldset { margin-top:1.25rem; }

@@ -1,0 +1,25 @@
+{
+  "meta": {
+    "label": "Fictional customer for the prototype. Not a real person.",
+    "full_reonboarding_items": 12,
+    "full_reonboarding_note": "A full re-onboarding asks again for every item a new customer gives: name, date of birth, place of birth, nationality, address, identity document, account purpose, occupation, source of funds, monthly activity, public position and tax residence."
+  },
+  "customer": { "first_name": "Martine", "customer_since": 2012, "product": "current_account", "country_risk": "eu_eea", "purpose": "salary_and_bills" },
+  "review": {
+    "reason": "periodic",
+    "last_review_years_ago": 5,
+    "deadline_days": 60
+  },
+  "items": [
+    { "id": "full_name", "group": "you", "label": "Full name", "value": "Martine Dubois", "status": "ok", "editable": false },
+    { "id": "birth", "group": "you", "label": "Date and place of birth", "value": "8 March 1974, Namur", "status": "ok", "editable": false },
+    { "id": "nationality", "group": "you", "label": "Nationality", "value": "Belgian", "status": "ok", "editable": false },
+    { "id": "address", "group": "you", "label": "Address", "value": "Rue des Tilleuls 12, 4000 Liège", "status": "ok", "editable": true, "input": "text" },
+    { "id": "id_document", "group": "you", "label": "Identity document", "value": "Belgian eID card", "status": "expired", "expired_days_ago": 73, "editable": false, "action": "renew_id" },
+    { "id": "occupation", "group": "money", "label": "Occupation", "tier_question": "occupation", "value": "employed", "status": "ok", "editable": true },
+    { "id": "source_of_funds", "group": "money", "label": "Where your money comes from", "tier_question": "source_of_funds", "value": "salary_pension_documented", "status": "ok", "editable": true },
+    { "id": "monthly_activity", "group": "money", "label": "Money through the account each month", "tier_question": "monthly_activity", "value": "normal", "status": "ok", "editable": true },
+    { "id": "pep", "group": "money", "label": "Important public position (you, family or close associates)", "tier_question": "pep", "value": null, "status": "missing", "editable": true },
+    { "id": "tax_residence", "group": "money", "label": "Where you pay tax", "tier_question": "tax_residence", "value": "belgium_only", "status": "ok", "editable": true }
+  ]
+}

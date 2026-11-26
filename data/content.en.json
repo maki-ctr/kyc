@@ -2,7 +2,12 @@
   "lang": "en",
   "bank": "kycBank",
   "banner": "Prototype. kycBank is a fictional bank. Nothing you type leaves your browser.",
-  "nav": { "back": "Back", "next": "Continue", "step": "Step {n} of {total}", "why": "Why we ask" },
+  "nav": {
+    "back": "Back",
+    "next": "Continue",
+    "step": "Step {n} of {total}",
+    "why": "Why we ask"
+  },
   "welcome": {
     "title": "Open a kycBank account",
     "lead": "New in Belgium? Open your account from your phone. First we'll tell you exactly what you need, so nothing surprises you halfway.",
@@ -22,22 +27,41 @@
         "text": "Where are you living now?",
         "why_we_ask": "Banks must know where you live. If you're not registered at your commune yet, we'll ask for other proof instead.",
         "options": [
-          { "value": "registered", "label": "In Belgium, and I'm registered at my commune" },
-          { "value": "not_registered", "label": "In Belgium, but not registered at my commune yet" },
-          { "value": "abroad_moving", "label": "Abroad, and I'm moving to Belgium soon" }
+          {
+            "value": "registered",
+            "label": "In Belgium, and I'm registered at my commune"
+          },
+          {
+            "value": "not_registered",
+            "label": "In Belgium, but not registered at my commune yet"
+          },
+          {
+            "value": "abroad_moving",
+            "label": "Abroad, and I'm moving to Belgium soon"
+          }
         ]
       },
-      { "from_tier_table": "country_risk" },
+      {
+        "from_tier_table": "country_risk"
+      },
       {
         "id": "has_eid",
         "text": "Do you have itsme or a Belgian eID card?",
         "why_we_ask": "With itsme or a Belgian eID we can confirm who you are in a minute. Without one, you'll photograph your passport instead. Both work.",
         "options": [
-          { "value": "yes", "label": "Yes" },
-          { "value": "no", "label": "Not yet" }
+          {
+            "value": "yes",
+            "label": "Yes"
+          },
+          {
+            "value": "no",
+            "label": "Not yet"
+          }
         ]
       },
-      { "from_tier_table": "source_of_funds" }
+      {
+        "from_tier_table": "source_of_funds"
+      }
     ]
   },
   "account": {
@@ -48,15 +72,42 @@
     "title": "Your document list",
     "lead": "Have these ready before you continue. Nothing is uploaded on this screen.",
     "items": {
-      "id": { "label": "Your passport or national ID card", "why": "The law requires us to check who you are." },
-      "permit": { "label": "Your Belgian residence permit, or the document your commune gave you while it's being made", "why": "It shows you're allowed to live in Belgium." },
-      "moving": { "label": "Proof you're moving to Belgium, such as your employment contract", "why": "We can only open accounts for people who live, or will soon live, in Belgium." },
-      "address": { "label": "Proof of your address in Belgium: a rental contract or a recent utility bill", "why": "Needed only if your commune registration isn't done yet. We'll tell you if you can skip it." },
-      "payslip": { "label": "A recent payslip or pension statement", "why": "It confirms where your money comes from." },
-      "contract": { "label": "Your employment contract, or a recent statement for your savings or business income", "why": "It confirms where your money comes from." },
-      "funds_other": { "label": "Proof of where the money comes from. We'll tell you what fits your case.", "why": "The law asks for more detail when the source isn't clear yet." },
-      "itsme": { "label": "itsme on your phone, or your Belgian eID card and a card reader", "why": "The fastest way to confirm who you are." },
-      "camera": { "label": "A phone camera, for a photo of your passport and a short selfie", "why": "Without itsme, this is how we confirm the passport is yours." }
+      "id": {
+        "label": "Your passport or national ID card",
+        "why": "The law requires us to check who you are."
+      },
+      "permit": {
+        "label": "Your Belgian residence permit, or the document your commune gave you while it's being made",
+        "why": "It shows you're allowed to live in Belgium."
+      },
+      "moving": {
+        "label": "Proof you're moving to Belgium, such as your employment contract",
+        "why": "We can only open accounts for people who live, or will soon live, in Belgium."
+      },
+      "address": {
+        "label": "Proof of your address in Belgium: a rental contract or a recent utility bill",
+        "why": "Needed only if your commune registration isn't done yet. We'll tell you if you can skip it."
+      },
+      "payslip": {
+        "label": "A recent payslip or pension statement",
+        "why": "It confirms where your money comes from."
+      },
+      "contract": {
+        "label": "Your employment contract, or a recent statement for your savings or business income",
+        "why": "It confirms where your money comes from."
+      },
+      "funds_other": {
+        "label": "Proof of where the money comes from. We'll tell you what fits your case.",
+        "why": "The law asks for more detail when the source isn't clear yet."
+      },
+      "itsme": {
+        "label": "itsme on your phone, or your Belgian eID card and a card reader",
+        "why": "The fastest way to confirm who you are."
+      },
+      "camera": {
+        "label": "A phone camera, for a photo of your passport and a short selfie",
+        "why": "Without itsme, this is how we confirm the passport is yours."
+      }
     }
   },
   "consent": {
@@ -73,16 +124,39 @@
   "identity": {
     "title": "Confirm who you are",
     "simulated": "Simulated step. No real identity check happens in this prototype.",
-    "route_eid": { "button": "Continue with itsme or eID", "note": "Usually about a minute." },
-    "route_doc": { "button": "I don't have itsme yet", "note": "Takes a few minutes. A colleague may check your photos." },
+    "route_eid": {
+      "button": "Continue with itsme or eID",
+      "note": "Usually about a minute."
+    },
+    "route_doc": {
+      "button": "I don't have itsme yet",
+      "note": "Takes a few minutes. A colleague may check your photos."
+    },
     "eid_done": "Identity confirmed (simulated). We received your name, date and place of birth, and nationality from itsme.",
-    "doc_steps": ["Photo of your passport (simulated)", "Short selfie video (simulated)"],
+    "doc_steps": [
+      "Photo of your passport (simulated)",
+      "Short selfie video (simulated)"
+    ],
     "doc_done": "Photos received (simulated). Now type your details as they appear on your passport.",
     "fields": [
-      { "id": "full_name", "label": "Full name", "hint": "As on your passport" },
-      { "id": "birth_date", "label": "Date of birth", "type": "date" },
-      { "id": "birth_place", "label": "Place of birth" },
-      { "id": "nationality", "label": "Nationality" }
+      {
+        "id": "full_name",
+        "label": "Full name",
+        "hint": "As on your passport"
+      },
+      {
+        "id": "birth_date",
+        "label": "Date of birth",
+        "type": "date"
+      },
+      {
+        "id": "birth_place",
+        "label": "Place of birth"
+      },
+      {
+        "id": "nationality",
+        "label": "Nationality"
+      }
     ],
     "why_we_ask": "EU law lists exactly what a bank must check: your names, date and place of birth, nationality and where you live."
   },
@@ -119,5 +193,58 @@
     "next_review": "We'll ask you to check your details again by {date}.",
     "restart": "Start again",
     "log": "Show test log"
+  },
+  "refresh": {
+    "notice": {
+      "title": "Time to check your details, {name}",
+      "reason_periodic": "We last checked your details {years} years ago. EU law asks banks to keep them up to date, at least every five years for most customers.",
+      "reason_expired": "Your identity document on file has also expired.",
+      "deadline": "Please do this by {date}.",
+      "consequence": "You can keep using your account as normal. If we haven't heard from you by then, we'll remind you, and we may have to limit some services until it's done.",
+      "effort": "Most of it is already filled in. You only confirm what's still right and update what isn't.",
+      "start": "Check my details"
+    },
+    "datause": {
+      "title": "How we use your details",
+      "points": [
+        "We keep your details up to date because EU anti-money-laundering law requires it. That's the legal basis, so we don't need your consent.",
+        "We only ask again for what is missing, out of date or changed.",
+        "In this prototype nothing is stored or sent anywhere."
+      ],
+      "agree": "I've read how kycBank uses my details"
+    },
+    "review": {
+      "title": "Is this still right?",
+      "lead": "Tap Change for anything that's different. Items marked Action needed must be done.",
+      "groups": {
+        "you": "About you",
+        "money": "About your account"
+      },
+      "ok": "Up to date",
+      "expired": "Expired {days} days ago",
+      "missing": "Please confirm",
+      "change": "Change",
+      "keep": "Keep as it was",
+      "locked": "To correct this, contact us: it needs a check of your identity document.",
+      "action_needed": "Action needed"
+    },
+    "update": {
+      "title": "Update what changed",
+      "renew_title": "Renew your identity document",
+      "renew_eid": "Read my new eID with itsme (simulated)",
+      "renew_doc": "Take a photo of my new ID card (simulated)",
+      "renew_done": "New identity document received (simulated).",
+      "why_id": "An expired document can't confirm who you are any more, so we need the new one."
+    },
+    "done": {
+      "title": "Thank you, your details are up to date (simulated)",
+      "title_review": "Thank you. A colleague will look at the changes (simulated)",
+      "summary": "You confirmed {confirmed} items and updated {updated}.",
+      "next_review": "We'll ask you to check them again by {date}.",
+      "review_note": "Because of what changed, the extra checks now apply. We'll message you if we need anything else.",
+      "compare": "A full re-onboarding would have asked for {full} items.",
+      "restart": "Start again",
+      "log": "Show test log"
+    }
   }
 }
