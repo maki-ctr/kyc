@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "id": "K-04",
+    "title": "Due-diligence tier table",
+    "version": "1.0",
+    "date": "2026-11-26",
+    "bank": "kycBank",
+    "label": "Illustrative. Prototype only. Not any bank's risk model.",
+    "disclaimer": "kycBank is a fictional bank. This table shows what each tier means for the customer journey. It is not a risk-scoring model and must not be used to make real decisions.",
+    "rule_basis": "Regulation (EU) 2024/1624 (AMLR) Articles 25, 26, 29, 33 and 34; AMLA final draft RTS on customer due diligence, 30 Sep 2026. See docs/K-03_rule_notes.md."
+  },
+  "decision": {
+    "method": "highest_tier_wins",
+    "order": ["simplified", "standard", "enhanced"],
+    "explanation": "Each answer points to a tier. The customer's tier is the highest one any answer points to. Simplified applies only when every answer points to simplified. Questions with tier null are asked for the file but do not change the tier."
+  },
+  "tiers": {
+    "simplified": {
+      "label": "Simplified checks",
+      "account_opens": "now",
+      "human_review": false,
+      "extra_documents": [],
+      "next_step": "Your account opens now. We needed fewer details from you because the account and your answers are low risk.",
+      "review_interval_months": 60,
+      "review_note": "Legal maximum is five years (AMLR Article 26(2)). A bank may set a shorter period."
+    },
+    "standard": {
+      "label": "Standard checks",
+      "account_opens": "now",
+      "human_review": false,
+      "extra_documents": [],
+      "next_step": "Your account opens now. We'll ask you to confirm your details from time to time so your file stays up to date.",
+      "review_interval_months": 60,
+      "review_note": "Legal maximum is five years (AMLR Article 26(2)). A bank may set a shorter period."
+    },
+    "enhanced": {
+      "label": "Extra checks",
+      "account_opens": "after_review",
+      "human_review": true,
+      "extra_documents": ["proof_of_source_of_funds", "proof_of_address"],
+      "next_step": "We need a few more documents and a colleague will review your application before the account opens. We'll tell you what to send and how long it usually takes.",
+      "review_interval_months": 12,
+      "review_note": "Legal maximum is one year for higher-risk customers (AMLR Article 26(2))."
+    }
+  },
+  "questions": [
+    {
+      "id": "product",
+      "step": "account_choice",
+      "text": "Which account do you need?",
+      "why_we_ask": "Different accounts carry different risks, so the checks we must do depend on the account you choose.",
+      "options": [
+        { "value": "basic_payment_account", "label": "Basic payment account (everyday payments, no overdraft)", "tier": "simplified" },
+        { "value": "current_account", "label": "Current account", "tier": "standard" },
+        { "value": "current_plus_international", "label": "Current account with international transfers", "tier": "enhanced" }
+      ]
+    },
+    {
+      "id": "purpose",
+      "step": "due_diligence",
+      "text": "What will you mainly use the account for?",
+      "why_we_ask": "The law asks us to understand what an account is for before we open it (AMLR Article 25).",
+      "options": [
+        { "value": "salary_and_bills", "label": "Receiving my salary and paying rent and bills", "tier": null },
+        { "value": "savings", "label": "Saving", "tier": null },
+        { "value": "business_income", "label": "Income from my own business", "tier": null },
+        { "value": "other", "label": "Something else", "tier": null }
+      ]
+    },
+    {
+      "id": "occupation",
+      "step": "due_diligence",
+      "text": "What do you do for a living?",
+      "why_we_ask": "Your occupation helps us understand the money you expect to move through the account (AMLR Article 25).",
+      "options": [
+        { "value": "employed", "label": "Employed", "tier": null },
+        { "value": "self_employed", "label": "Self-employed", "tier": null },
+        { "value": "student", "label": "Student", "tier": null },
+        { "value": "retired", "label": "Retired", "tier": null },
+        { "value": "not_working", "label": "Not working at the moment", "tier": null }
+      ]
+    },
+    {
+      "id": "source_of_funds",
+      "step": "due_diligence",
+      "text": "Where will the money in this account mainly come from?",
+      "why_we_ask": "We must know where money comes from to protect you and the bank from fraud and money laundering. Most people answer 'salary'.",
+      "options": [
+        { "value": "salary_pension_documented", "label": "Salary or pension, and I can show a payslip or pension statement", "tier": "simplified" },
+        { "value": "salary_selfemployed_savings", "label": "Salary (no payslip yet), self-employment or my savings", "tier": "standard" },
+        { "value": "cash_or_unclear", "label": "Large cash deposits, or I'm not sure yet", "tier": "enhanced" }
+      ]
+    },
+    {
+      "id": "monthly_activity",
+      "step": "due_diligence",
+      "text": "Roughly how much money will go through the account each month?",
+      "why_we_ask": "An estimate helps us spot payments that don't look like yours. It's not a limit on your account.",
+      "options": [
+        { "value": "low_domestic", "label": "Up to 1,500 euros, mostly in Belgium", "tier": "simplified" },
+        { "value": "normal", "label": "1,500 to 10,000 euros", "tier": "standard" },
+        { "value": "high_or_cross_border", "label": "More than 10,000 euros, or mostly to and from other countries", "tier": "enhanced" }
+      ]
+    },
+    {
+      "id": "country_risk",
+      "step": "eligibility",
+      "text": "Where do you live and which nationality do you hold?",
+      "why_we_ask": "EU law requires extra checks for people connected to countries the European Commission lists as high-risk (AMLR Article 29). It's about the country's rules, not about you.",
+      "illustrative_note": "In a real app the customer picks countries from a list and the bank checks them against the Commission's current list. The prototype offers three groups so every tier can be tested.",
+      "options": [
+        { "value": "eu_eea", "label": "EU or EEA country", "tier": "simplified" },
+        { "value": "other_not_listed", "label": "Another country, not on the EU high-risk list", "tier": "standard" },
+        { "value": "listed_high_risk", "label": "A country on the EU high-risk list (prototype option)", "tier": "enhanced" }
+      ]
+    },
+    {
+      "id": "pep",
+      "step": "due_diligence",
+      "text": "Do you, or does a close family member or close associate, hold an important public position?",
+      "why_we_ask": "People in public roles, such as ministers, judges or senior officials, need extra checks by law. Saying yes does not stop you opening an account.",
+      "options": [
+        { "value": "no", "label": "No", "tier": "simplified" },
+        { "value": "yes", "label": "Yes", "tier": "enhanced" }
+      ]
+    },
+    {
+      "id": "tax_residence",
+      "step": "due_diligence",
+      "text": "In which countries do you pay tax?",
+      "why_we_ask": "Banks must report accounts of people who pay tax in other countries to the tax authorities under EU rules.",
+      "options": [
+        { "value": "belgium_only", "label": "Belgium only", "tier": null },
+        { "value": "belgium_and_other", "label": "Belgium and another country", "tier": null },
+        { "value": "other_only", "label": "Another country only", "tier": null }
+      ]
+    }
+  ],
+  "test_cases": [
+    {
+      "name": "Newcomer, basic account, EU, payslip",
+      "answers": { "product": "basic_payment_account", "country_risk": "eu_eea", "source_of_funds": "salary_pension_documented", "monthly_activity": "low_domestic", "pep": "no" },
+      "expected": "simplified"
+    },
+    {
+      "name": "Newcomer, current account, non-EU, no payslip yet",
+      "answers": { "product": "current_account", "country_risk": "other_not_listed", "source_of_funds": "salary_selfemployed_savings", "monthly_activity": "normal", "pep": "no" },
+      "expected": "standard"
+    },
+    {
+      "name": "Basic account but self-declared PEP",
+      "answers": { "product": "basic_payment_account", "country_risk": "eu_eea", "source_of_funds": "salary_pension_documented", "monthly_activity": "low_domestic", "pep": "yes" },
+      "expected": "enhanced"
+    },
+    {
+      "name": "Current account, mostly cross-border",
+      "answers": { "product": "current_account", "country_risk": "eu_eea", "source_of_funds": "salary_pension_documented", "monthly_activity": "high_or_cross_border", "pep": "no" },
+      "expected": "enhanced"
+    }
+  ]
+}
